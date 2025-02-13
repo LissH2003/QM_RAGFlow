@@ -43,6 +43,7 @@ import {
   initialBaiduValues,
   initialBeginValues,
   initialBingValues,
+  initialAnswerArchiverValues,
   initialCategorizeValues,
   initialConcentratorValues,
   initialCrawlerValues,
@@ -123,6 +124,7 @@ export const useInitializeOperatorParams = () => {
       [Operator.PubMed]: initialPubMedValues,
       [Operator.ArXiv]: initialArXivValues,
       [Operator.Google]: initialGoogleValues,
+      [Operator.AnswerArchiver]: initialAnswerArchiverValues,
       [Operator.Bing]: initialBingValues,
       [Operator.GoogleScholar]: initialGoogleScholarValues,
       [Operator.DeepL]: initialDeepLValues,
@@ -277,7 +279,7 @@ export const useHandleFormValuesChange = (id?: string) => {
         nextValues = {
           ...values,
           ...settledModelVariableMap[
-            changedValues['parameter'] as keyof typeof settledModelVariableMap
+          changedValues['parameter'] as keyof typeof settledModelVariableMap
           ],
         };
       }
@@ -306,10 +308,10 @@ export const useSetLlmSetting = (
       pre[field] = isEmpty(initialLlmSetting)
         ? true
         : !!initialLlmSetting[
-            variableEnabledFieldMap[
-              field as keyof typeof variableEnabledFieldMap
-            ] as keyof Variable
-          ];
+        variableEnabledFieldMap[
+        field as keyof typeof variableEnabledFieldMap
+        ] as keyof Variable
+        ];
       return pre;
     }, {});
     let otherValues = settledModelVariableMap[ModelVariableType.Precise];

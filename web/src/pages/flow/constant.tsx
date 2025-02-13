@@ -7,6 +7,7 @@ import {
 import { ReactComponent as AkShareIcon } from '@/assets/svg/akshare.svg';
 import { ReactComponent as ArXivIcon } from '@/assets/svg/arxiv.svg';
 import { ReactComponent as baiduFanyiIcon } from '@/assets/svg/baidu-fanyi.svg';
+import { ReactComponent as AnswerArchiverIcon } from '@/assets/svg/answerarchiver.svg';
 import { ReactComponent as BaiduIcon } from '@/assets/svg/baidu.svg';
 import { ReactComponent as BeginIcon } from '@/assets/svg/begin.svg';
 import { ReactComponent as BingIcon } from '@/assets/svg/bing.svg';
@@ -67,6 +68,7 @@ export enum Operator {
   Retrieval = 'Retrieval',
   Generate = 'Generate',
   Answer = 'Answer',
+  AnswerArchiver = 'AnswerArchiver',
   Categorize = 'Categorize',
   Message = 'Message',
   Relevant = 'Relevant',
@@ -109,6 +111,7 @@ export const operatorIconMap = {
   [Operator.Retrieval]: RocketOutlined,
   [Operator.Generate]: MergeCellsOutlined,
   [Operator.Answer]: SendOutlined,
+  [Operator.AnswerArchiver]: AnswerArchiverIcon,
   [Operator.Begin]: BeginIcon,
   [Operator.Categorize]: DatabaseOutlined,
   [Operator.Message]: MessageOutlined,
@@ -232,6 +235,9 @@ export const operatorMap: Record<
     color: 'white',
   },
   [Operator.Google]: {
+    backgroundColor: 'pink',
+  },
+  [Operator.AnswerArchiver]: {
     backgroundColor: 'pink',
   },
   [Operator.Bing]: {
@@ -364,6 +370,9 @@ export const componentMenuList = [
   },
   {
     name: Operator.AkShare,
+  },
+  {
+    name: Operator.AnswerArchiver,
   },
   {
     name: Operator.YahooFinance,
@@ -503,11 +512,16 @@ export const initialGoogleScholarValues = {
   ...initialQueryBaseValues,
 };
 
+export const initialAnswerArchiverValues = {
+  top_n: 5,
+  auth_key: 'relevance',
+  ...initialQueryBaseValues
+};
+
 export const initialDeepLValues = {
   top_n: 5,
   auth_key: 'relevance',
 };
-
 export const initialGithubValues = {
   top_n: 5,
   ...initialQueryBaseValues,
@@ -695,6 +709,7 @@ export const RestrictedUpstreamMap = {
   [Operator.Switch]: [Operator.Begin],
   [Operator.WenCai]: [Operator.Begin],
   [Operator.AkShare]: [Operator.Begin],
+  [Operator.AnswerArchiver]: [Operator.Begin, Operator.Retrieval],
   [Operator.YahooFinance]: [Operator.Begin],
   [Operator.Jin10]: [Operator.Begin],
   [Operator.Concentrator]: [Operator.Begin],
@@ -735,6 +750,7 @@ export const NodeMap = {
   [Operator.Concentrator]: 'logicNode',
   [Operator.WenCai]: 'ragNode',
   [Operator.AkShare]: 'ragNode',
+  [Operator.AnswerArchiver]: 'logicNode',
   [Operator.YahooFinance]: 'ragNode',
   [Operator.Jin10]: 'ragNode',
   [Operator.TuShare]: 'ragNode',

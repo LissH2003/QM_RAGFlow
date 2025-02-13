@@ -81,7 +81,7 @@ export default {
       searchKnowledgePlaceholder: 'Buscar',
       noMoreData: 'Isso é tudo. Nada mais.',
     },
-    knowledgeDetails: {
+    knowledgeDetail: {
       dataset: 'Conjunto de dados',
       testing: 'Teste de recuperação',
       files: 'Arquivos',
@@ -221,7 +221,6 @@ export default {
       upload: 'Enviar',
       english: 'Inglês',
       chinese: 'Chinês',
-      portugueseBr: 'Português (Brasil)',
       embeddingModelPlaceholder:
         'Por favor, selecione um modelo de incorporação',
       chunkMethodPlaceholder: 'Por favor, selecione um método de fragmentação',
@@ -1105,8 +1104,8 @@ export default {
         lineBreak: 'Quebra de linha',
         tab: 'Tabulação',
         underline: 'Sublinhado',
-        diagonal: 'Forward slash',
-        minus: 'Dash',
+        diagonal: 'Diagonal',
+        minus: 'Menos',
         semicolon: 'Ponto e vírgula',
       },
       addVariable: 'Adicionar variável',

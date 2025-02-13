@@ -200,7 +200,7 @@ class Canvas(ABC):
                 if self.path[-1] and c == self.path[-1][-1]:
                     continue
                 cpn = self.components[c]["obj"]
-                if cpn.component_name == "Answer":
+                if cpn.component_name in ["Answer", "AnswerArchiver"]:
                     self.answer.append(c)
                 else:
                     logging.debug(f"Canvas.prepare2run: {c}")

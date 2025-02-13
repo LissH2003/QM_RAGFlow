@@ -508,7 +508,7 @@ export const useSelectItem = (defaultId?: string) => {
 };
 
 export const useFetchModelId = () => {
-  const { data: tenantInfo } = useFetchTenantInfo(true);
+  const { data: tenantInfo } = useFetchTenantInfo();
 
   return tenantInfo?.llm_id ?? '';
 };

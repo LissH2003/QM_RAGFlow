@@ -50,6 +50,7 @@ from .template import Template, TemplateParam
 from .email import Email, EmailParam
 from .iteration import Iteration, IterationParam
 from .iterationitem import IterationItem, IterationItemParam
+from .AnswerArchiver import AnswerArchiver, AnswerArchiverParam
 
 
 def component_class(class_name):
@@ -81,6 +82,8 @@ __all__ = [
     "KeywordExtractParam",
     "Concentrator",
     "ConcentratorParam",
+    "AnswerArchiver",
+    "AnswerArchiverParam",
     "Baidu",
     "BaiduParam",
     "DuckDuckGo",

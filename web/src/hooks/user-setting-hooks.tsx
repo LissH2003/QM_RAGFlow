@@ -46,9 +46,7 @@ export const useFetchUserInfo = (): ResponseGetType<IUserInfo> => {
   return { data, loading };
 };
 
-export const useFetchTenantInfo = (
-  showEmptyModelWarn = false,
-): ResponseGetType<ITenantInfo> => {
+export const useFetchTenantInfo = (): ResponseGetType<ITenantInfo> => {
   const { t } = useTranslation();
   const { data, isFetching: loading } = useQuery({
     queryKey: ['tenantInfo'],
@@ -60,10 +58,7 @@ export const useFetchTenantInfo = (
         // llm_id is chat_id
         // asr_id is speech2txt
         const { data } = res;
-        if (
-          showEmptyModelWarn &&
-          (isEmpty(data.embd_id) || isEmpty(data.llm_id))
-        ) {
+        if (isEmpty(data.embd_id) || isEmpty(data.llm_id)) {
           Modal.warning({
             title: t('common.warn'),
             content: (
@@ -95,7 +90,7 @@ export const useSelectParserList = (): Array<{
   value: string;
   label: string;
 }> => {
-  const { data: tenantInfo } = useFetchTenantInfo(true);
+  const { data: tenantInfo } = useFetchTenantInfo();
 
   const parserList = useMemo(() => {
     const parserArray: Array<string> = tenantInfo?.parser_ids?.split(',') ?? [];

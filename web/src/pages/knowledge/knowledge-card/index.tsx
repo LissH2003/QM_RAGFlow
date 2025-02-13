@@ -40,10 +40,10 @@ const KnowledgeCard = ({ item }: IProps) => {
 
   return (
     <Badge.Ribbon
-      text={item?.nickname}
+      text={item?.nickname || '默认昵称'}
       color={userInfo?.nickname === item?.nickname ? '#1677ff' : 'pink'}
       className={classNames(styles.ribbon, {
-        [styles.hideRibbon]: item.permission !== 'team',
+        [styles.hideRibbon]: item?.permission !== 'team',
       })}
     >
       <Card className={styles.card} onClick={handleCardClick}>

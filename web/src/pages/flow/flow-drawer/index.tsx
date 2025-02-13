@@ -7,6 +7,7 @@ import { Play } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { BeginId, Operator, operatorMap } from '../constant';
 import AkShareForm from '../form/akshare-form';
+import AnswerArchiverForm from '../form/AnswerArchiver-form';
 import AnswerForm from '../form/answer-form';
 import ArXivForm from '../form/arxiv-form';
 import BaiduFanyiForm from '../form/baidu-fanyi-form';
@@ -60,6 +61,7 @@ const FormMap = {
   [Operator.Retrieval]: RetrievalForm,
   [Operator.Generate]: GenerateForm,
   [Operator.Answer]: AnswerForm,
+  [Operator.AnswerArchiver]: AnswerArchiverForm,
   [Operator.Categorize]: CategorizeForm,
   [Operator.Message]: MessageForm,
   [Operator.Relevant]: RelevantForm,

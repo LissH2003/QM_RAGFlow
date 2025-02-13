@@ -1114,9 +1114,7 @@ export default {
         lineBreak: 'Ngắt dòng',
         tab: 'Tab',
         underline: 'Gạch chân',
-        diagonal: 'Forward slash',
-        minus: 'Dash',
-        semicolon: 'Semicolon',
+        diagonal: 'Diagonal',
       },
     },
     footer: {
