@@ -49,7 +49,7 @@ const KnowledgeCard = ({ item }: IProps) => {
       <Card className={styles.card} onClick={handleCardClick}>
         <div className={styles.container}>
           <div className={styles.content}>
-            <Avatar size={34} icon={<UserOutlined />} src={item.avatar} />
+            <Avatar size={34} icon={<UserOutlined />} src={item.avatar || defaultAvatar} />
             <OperateDropdown deleteItem={removeKnowledge}></OperateDropdown>
           </div>
           <div className={styles.titleWrapper}>
