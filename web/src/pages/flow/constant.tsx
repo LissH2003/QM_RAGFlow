@@ -513,9 +513,22 @@ export const initialGoogleScholarValues = {
 };
 
 export const initialAnswerArchiverValues = {
-  top_n: 5,
-  auth_key: 'relevance',
-  ...initialQueryBaseValues
+  url: 'http://',
+  method: 'POST',
+  json: `'{
+    "appId": "",
+    "formId": "",
+    "data": {
+        "question": ,
+        "answer":  
+    },
+    "openId": "",
+    "extField": "",
+    "dataCheck": "NO",
+    "calculate": "NO",
+    "startFlow": "NO",
+    "startEvent": "NO"
+}'`
 };
 
 export const initialDeepLValues = {
@@ -750,7 +763,7 @@ export const NodeMap = {
   [Operator.Concentrator]: 'logicNode',
   [Operator.WenCai]: 'ragNode',
   [Operator.AkShare]: 'ragNode',
-  [Operator.AnswerArchiver]: 'logicNode',
+  [Operator.AnswerArchiver]: 'invokeNode',
   [Operator.YahooFinance]: 'ragNode',
   [Operator.Jin10]: 'ragNode',
   [Operator.TuShare]: 'ragNode',
