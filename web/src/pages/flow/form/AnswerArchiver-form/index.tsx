@@ -17,19 +17,7 @@ const MethodOptions = [Method.GET, Method.POST, Method.PUT].map((x) => ({
     value: x,
 }));
 
-interface TimeoutInputProps {
-    value?: number;
-    onChange?: (value: number | null) => void;
-}
 
-const TimeoutInput = ({ value, onChange }: TimeoutInputProps) => {
-    const { t } = useTranslation();
-    return (
-        <Space>
-            <InputNumber value={value} onChange={onChange} /> {t('common.s')}
-        </Space>
-    );
-};
 
 const AnswerArchiverForm = ({ onValuesChange, form, node }: IOperatorForm) => {
     const { t } = useTranslation();
@@ -43,6 +31,9 @@ const AnswerArchiverForm = ({ onValuesChange, form, node }: IOperatorForm) => {
                 onValuesChange={onValuesChange}
                 layout={'vertical'}
             >
+                <Form.Item name={'string'} label={t('flow.string')}>
+                    <Input />
+                </Form.Item>
                 <Form.Item name={'url'} label={t('flow.url')}>
                     <Input />
                 </Form.Item>
@@ -52,6 +43,9 @@ const AnswerArchiverForm = ({ onValuesChange, form, node }: IOperatorForm) => {
                     initialValue={Method.GET}
                 >
                     <Select options={MethodOptions} />
+                </Form.Item>
+                <Form.Item name={'headers'} label={t('flow.headers')}>
+                    <Editor height={200} defaultLanguage="json" theme="vs-dark" />
                 </Form.Item>
                 <Form.Item name={'json'} label={t('flow.json')}>
                     <Editor height={200} defaultLanguage="json" theme="vs-dark" />

@@ -515,12 +515,18 @@ export const initialGoogleScholarValues = {
 export const initialAnswerArchiverValues = {
   url: 'http://',
   method: 'POST',
-  json: `'{
+  headers: `{
+   "Authorization": "gjBnru247osdyO95ceojWQxj9lzBPfnF",
+   "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
+   "Content-Type": "application/json",
+   "Accept": "*/*",
+   "Host": "cst.xiyongzy.com",
+   "Connection": "keep-alive"
+}`,
+  json: `{
     "appId": "",
     "formId": "",
-    "data": {
-        "question": ,
-        "answer":  
+    "data": {  
     },
     "openId": "",
     "extField": "",
@@ -528,7 +534,7 @@ export const initialAnswerArchiverValues = {
     "calculate": "NO",
     "startFlow": "NO",
     "startEvent": "NO"
-}'`
+}`
 };
 
 export const initialDeepLValues = {

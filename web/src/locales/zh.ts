@@ -1080,6 +1080,7 @@ General：实体和关系提取提示来自 GitHub - microsoft/graphrag：基于
       },
       answerArchiverDescription: '返回知识库未未命中的问题和答案到轻魔方，用于知识库补充。',
       answerArchiver: '轻魔方接口调用',
+      string: '关键词',
       json: '配置Body',
       token: 'Token',
       src: '源',
