@@ -516,11 +516,11 @@ export const initialAnswerArchiverValues = {
   url: 'http://',
   method: 'POST',
   headers: `{
-   "Authorization": "gjBnru247osdyO95ceojWQxj9lzBPfnF",
+   "Authorization": "your_token",
    "User-Agent": "Apifox/1.0.0 (https://apifox.com)",
    "Content-Type": "application/json",
    "Accept": "*/*",
-   "Host": "cst.xiyongzy.com",
+   "Host": "your_host",
    "Connection": "keep-alive"
 }`,
   json: `{
